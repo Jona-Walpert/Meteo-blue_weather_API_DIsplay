@@ -15,6 +15,7 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 time = ["22","23","0","1","2","3"]
 
+api_key = "YOUR_API_KEY"
 
 text_font = pygame.font.SysFont("Arial", 35, bold=True)
 
@@ -38,7 +39,7 @@ while run:
 
 
 
-    data = requests.get('your csv api key').text
+    data = requests.get(f'https://my.meteoblue.com/packages/basic-1h_clouds-1h?apikey={api_key}&lat=47.615&lon=7.66457&asl=308&format=csv').text
 
 
            
@@ -55,8 +56,9 @@ while run:
         print("Uhrzeit: ", time[x]," Uhr" " : ", "Gesamt Wolkenbedeckung= ", tcc_arr[x], "%")
 
 
+
     
-    drawscreen()
+    drawscreen("")
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
