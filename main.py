@@ -9,7 +9,7 @@ import threading
 import ctypes
 user32 = ctypes.windll.user32
 
-api_key = "zfBA7Y4U5RrusykZ"
+api_key = "YOURAPIKEY"
 logoname ="meteobluelogo.png" #255 x 255 pixels
 
 pygame.init()
